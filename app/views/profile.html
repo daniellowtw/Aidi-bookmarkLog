@@ -1,1 +1,19 @@
-<p>This is the profile view.</p>
+<!--// TODO: Make special filter for tags rather than using api-->
+{{message}}
+<div class="day-entry" ng-repeat="dayEntry in dayEntries.slice().reverse()" ng-show="dayEntry.show">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{dayEntry.date}}</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li ng-repeat="link in dayEntry.links" class="link">
+                    <a ng-href="#/add/{{link.linkdate}}" class="btn" ng-show="authenticated"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a ng-click="removeLink({{link.linkdate}}, $index)" class="btn" ng-show="authenticated"><i class="glyphicon glyphicon-remove"></i></a>
+                    <a ng-href="{{link.url}}" title="{{link.description}}">{{link.title}}</a>
+                    <small ng-repeat="tag in splitTags(link.tags)"><a ng-href="#/profile/tags/{{tag}}"> <span class="label label-info">{{tag}}</span></a></small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

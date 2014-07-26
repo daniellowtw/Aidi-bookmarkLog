@@ -1,1 +1,26 @@
-<p>This is the add view.</p>
+<form ng-submit="processForm()">
+    <h3>{{dateTime}}</h3>
+    <div class="panel panel-default">
+    	<div class="panel-body">
+            <div class="form-group" >
+                <input type="hidden" ng-model="form.alinkdate">
+                <i>URL</i><br>
+                <input class="form-control" type="text" ng-model="form.url"><br>
+                <i>Title</i><br>
+                <input class="form-control" type="text" ng-model="form.title"><br>
+                <i>Description</i><br>
+                <textarea class="form-control" ng-model="form.description" rows="4" cols="25"></textarea><br>
+                <bootstrap-tagsinput
+                        ng-model="cities"
+                        typeahead-source="queryCities"
+                        tagclass="getTagClass"
+                        itemvalue="value"
+                        itemtext="text">
+                </bootstrap-tagsinput>
+                <i>Tags</i><br><input class="form-control" type="text" id="tags" ng-model="form.tags" data-role="tagsinput"><br>
+            </div>
+        </div>
+    </div>
+        <input type="submit" value="Save" name="save_edit" class="btn btn-lg btn-primary">
+        <!--<input type="button" value="Add another" class="btn btn-lg btn-primary" ng-click="addAnotherForm()">-->
+</form>
