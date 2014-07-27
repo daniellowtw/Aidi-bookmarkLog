@@ -1,6 +1,6 @@
 <!--// TODO: Make special filter for tags rather than using api-->
 {{message}}
-<div class="day-entry" ng-repeat="dayEntry in dayEntries.slice().reverse()" ng-show="dayEntry.show">
+<div class="day-entry" ng-repeat="dayEntry in dayEntries" ng-show="dayEntry.show">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">{{dayEntry.date}}</h3>

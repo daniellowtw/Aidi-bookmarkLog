@@ -84,5 +84,6 @@ angular
             })
         }
     })
+//    .value("SERVER", "http://localhost:8888/")
     .value("SERVER", "http://twdl3.user.srcf.net/summer14/aidi/server/")
 ;

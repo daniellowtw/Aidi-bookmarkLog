@@ -109,9 +109,10 @@ body {
 
 .link{
     list-style: none;
+    overflow-wrap: break-word;
 }
 
-.panel-body, ul {
+.day-entry .panel-body, ul {
     margin:0;
     padding: 0;
 }
