@@ -8,7 +8,7 @@
  * Controller of the aidiApp
  */
 angular.module('aidiApp')
-    .controller('AddcontrollerCtrl', function ($scope, $http, $location, $routeParams, profileFactory) {
+    .controller('AddcontrollerCtrl', function ($scope, $http, $location, $routeParams, profileFactory, SERVER) {
         if(!!$routeParams.linkDate){
             profileFactory.api('getLinkFromDate', $routeParams.linkDate).then(function(result){
                 $scope.form = result.data;
@@ -19,16 +19,17 @@ angular.module('aidiApp')
         }
         $scope.processForm = function(){
             //validation
-            if(!!$scope.form.alinkdate)
-                {$scope.form.alinkdate = Date.now();}
+            if(!$scope.form.linkdate)
+                {$scope.form.linkdate = Date.now();}
             //end validation
             $http({
                 method  : 'POST',
-                url     : 'http://localhost:8888/post.php',
+                url     : SERVER+'post.php',
                 data    : $.param($scope.form),  // pass in data as strings
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             })
                 .success(function(data){
+                    console.log(data);
                     $location.path("/#/profile");
                 })
         }
