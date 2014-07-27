@@ -1,0 +1,17 @@
+Major
+
+- Allow new users
+- Make pagination
+- Allow edit of tag names
+- Disable unauthorised people from adding to it
+- Report failure when posting fails
+- Auto complete for tags
+- Disallow duplicate tags
+- Auto close when saving from bookmarklet
+- Better presentatino for description
+- Change word cloud
+Minor
+- Change bg colours
+- Improve 'searching by' feature
+- Better tags delimination
+- Reload data when people submit link
