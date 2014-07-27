@@ -11,7 +11,7 @@
                     <a ng-href="#/add/{{link.linkdate}}" class="btn" ng-show="authenticated"><i class="glyphicon glyphicon-edit"></i></a>
                     <a ng-click="removeLink({{link.linkdate}}, $index)" class="btn" ng-show="authenticated"><i class="glyphicon glyphicon-remove"></i></a>
                     <a ng-href="{{link.url}}" title="{{link.description}}">{{link.title}}</a>
-                    <small ng-repeat="tag in splitTags(link.tags)"><a ng-href="#/profile/tags/{{tag}}"> <span class="label label-info">{{tag}}</span></a></small>
+                    <small ng-repeat="tag in splitTags(link.tags) track by $index"><a ng-href="#/profile/tags/{{tag}}"> <span class="label label-info">{{tag}}</span></a></small>
                 </li>
             </ul>
         </div>

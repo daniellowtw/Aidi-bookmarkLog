@@ -30,7 +30,7 @@ angular.module('aidiApp')
             })
                 .success(function(data){
                     console.log(data);
-                    $location.path("/#/profile");
+                    $location.path("/profile");
                 })
         }
         $scope.dateTime = new Date().toLocaleString();

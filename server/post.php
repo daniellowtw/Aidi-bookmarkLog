@@ -32,7 +32,7 @@ if (!empty($_POST)) {
 	}
 
 	$link = array('title' => trim($_POST['title']), 'url' => $url, 'description' => trim($description), 'private' => (isset($_POST['private'])?1:0),
-		'linkdate'           => $linkdate, 'tags'           => str_replace(',', ' ', $tags));
+		'linkdate'           => $linkdate, 'tags'           => preg_replace('/\s+/', ' ', str_replace(',', ' ', $tags)));
 	if ($link['title'] == '') {$link['title'] = $link['url'];
 	}
 	// If title is empty, use the URL as title.

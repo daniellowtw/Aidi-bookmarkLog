@@ -15,7 +15,7 @@ angular.module('aidiApp')
             })
         }
         $scope.splitTags = function (tagString) {
-            var tagArray = tagString.split(" ");
+            var tagArray = tagString.split(/\s+/);
             return tagArray;
         }
 //        $scope.filterOptions = {}
